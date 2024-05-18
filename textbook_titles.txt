@@ -1,0 +1,110 @@
+    Introduction to Computer Science
+    Calculus for Beginners
+    Organic Chemistry Fundamentals
+    Physics: Principles and Applications
+    Introduction to Psychology
+    Microeconomics: Theory and Practice
+    Macroeconomics Essentials
+    English Literature Survey
+    World History: From Prehistoric Times to Present
+    Introduction to Sociology
+    Principles of Marketing
+    Business Management Fundamentals
+    Anatomy and Physiology Basics
+    Environmental Science: Concepts and Applications
+    Introduction to Political Science
+    Fundamentals of Statistics
+    Introduction to Linguistics
+    Algebraic Structures
+    Engineering Mechanics: Statics and Dynamics
+    Principles of Genetics
+    Introduction to Philosophy
+    Microbiology Fundamentals
+    Human Resource Management Essentials
+    Introduction to Anthropology
+    International Relations: Concepts and Theories
+    Introduction to Cultural Studies
+    Financial Accounting Principles
+    Managerial Accounting Basics
+    Principles of Economics
+    Comparative Politics: Systems and Institutions
+    Introduction to Criminal Justice
+    Principles of Public Administration
+    Fundamentals of Geology
+    Introduction to Astronomy
+    Principles of Chemistry
+    Fundamentals of Biochemistry
+    Introduction to Education
+    Organizational Behavior: Concepts and Applications
+    Introduction to Journalism
+    Fundamentals of Engineering
+    Introduction to Film Studies
+    Principles of Ecology
+    Introduction to Business Law
+    Introduction to Ethics
+    Principles of Nutrition
+    Fundamentals of Human Anatomy
+    Introduction to Forensic Science
+    Introduction to Public Health
+    Introduction to Homeland Security
+    Principles of Criminal Law
+    Introduction to Cybersecurity
+    Introduction to Game Design
+    Principles of Web Development
+    Introduction to Artificial Intelligence
+    Introduction to Machine Learning
+    Principles of Robotics
+    Introduction to Data Science
+    Introduction to Big Data Analytics
+    Introduction to Cloud Computing
+    Fundamentals of Network Security
+    Introduction to Cryptography
+    Principles of Information Technology
+    Introduction to Programming
+    Fundamentals of Software Engineering
+    Introduction to Database Management
+    Principles of Operating Systems
+    Introduction to Computer Networks
+    Fundamentals of Internet Technologies
+    Introduction to Web Design
+    Principles of User Interface Design
+    Introduction to Human-Computer Interaction
+    Fundamentals of Digital Media
+    Introduction to Multimedia Systems
+    Principles of Audio Engineering
+    Introduction to Video Production
+    Fundamentals of Graphic Design
+    Introduction to Animation
+    Principles of 3D Modeling
+    Introduction to Virtual Reality
+    Fundamentals of Augmented Reality
+    Introduction to Digital Photography
+    Principles of Digital Imaging
+    Introduction to Typography
+    Fundamentals of Color Theory
+    Introduction to Visual Communication
+    Principles of Advertising Design
+    Introduction to Branding
+    Fundamentals of Marketing Design
+    Introduction to Print Design
+    Principles of Packaging Design
+    Introduction to Motion Graphics
+    Fundamentals of Interactive Design
+    Introduction to User Experience Design
+    Principles of Information Architecture
+    Introduction to Design Thinking
+    Fundamentals of Design Research
+    Introduction to Design Ethics
+    Principles of Design Management
+    Introduction to Design Innovation
+    Fundamentals of Design Psychology
+    Introduction to Design History
+    Principles of Design Theory
+    Introduction to Design Critique
+    Fundamentals of Design Methodology
+    Introduction to Design Practice
+    Principles of Design Education
+    Introduction to Design Philosophy
+    Fundamentals of Design Aesthetics
+    Introduction to Design Technology
+    Principles of Design Sustainability
