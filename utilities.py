@@ -1,22 +1,15 @@
 import random
-import io
+import os
 from author import Author
 from book import Book
-from profile import Profile
+from myProfile import Profile
 from profileBag import ProfileBag
 from bookBag import BookBag
 
 class Utilities:
     def __init__(self):
-        self.author = self.emit_author("First Names.txt", "Last Names.txt")
+        self.author = self.emit_author(os.path.join("assets", "txtfiles", "First Names.txt"), os.path.join("assets", "txtfiles", "Last Names.txt"))
         self.bk_arr = self.make_books()
-
-    def get_dictionary(self):
-        dic = set()
-        with open("dictionary.txt", "r") as file:
-            for _ in range(99154):
-                dic.add(file.readline().strip().lower())
-        return dic
 
     def get_profile_bag(self):
         profile_bag = ProfileBag()
@@ -37,7 +30,7 @@ class Utilities:
         return bag
 
     def make_books(self):
-        title_and_isbn = self.emit_title_and_isbn("textbook_titles.txt", "textbook_isbns.txt", 5000)
+        title_and_isbn = self.emit_title_and_isbn(os.path.join("assets", "txtfiles", "textbook_titles.txt"), os.path.join("assets", "txtfiles", "textbook_isbns.txt"), 5000)
         book_arr = []
         for title, isbn in title_and_isbn:
             book_arr.append(Book(title, isbn, self.get_random_author(self.author), self.emit_price(), None, None))

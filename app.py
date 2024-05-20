@@ -3,14 +3,29 @@ from tkinter import messagebox
 from utilities import Utilities
 from tkinter import PhotoImage
 from signup import SignupPage
+from getBags import GetBags
+from login import LoginPage
+import pickle
+import os
 
 class LibraryApp:
     def __init__(self, master):
         self.master = master
         self.master.title("Library Management System")
+        self.master.geometry("600x400")  # Set the initial size of the window
         self.utilities = Utilities()
-
+        self.get_bags_instance = GetBags()
+        self.get_bags_instance.start()
+        self.create_menu()  # Create the menu bar
+        self.frame = None
         self.show_home_page()
+
+    def create_menu(self):
+        self.menubar = tk.Menu(self.master)
+        file_menu = tk.Menu(self.menubar, tearoff=0)
+        file_menu.add_command(label="Exit", command=self.exit_app)
+        self.menubar.add_cascade(label="File", menu=file_menu)
+        self.master.config(menu=self.menubar)
 
     def show_home_page(self):
         self.clear_frame()
@@ -18,71 +33,38 @@ class LibraryApp:
         self.frame = tk.Frame(self.master)
         self.frame.pack()
 
-        self.label = tk.Label(self.frame, text="Welcome to the Library Management System")
-        self.label.pack()
+        tk.Label(self.frame, text="Welcome to the Library Management System").pack()
 
-        self.button1 = tk.Button(self.frame, text="Log In", command=self.show_login_page)
-        self.button1.pack()
-
-        self.button3 = tk.Button(self.frame, text="Sign Up", command=self.show_signup_page)
-        self.button3.pack()
-
-        self.button2 = tk.Button(self.frame, text="Exit", command=self.exit_app)
-        self.button2.pack()
-
-        
+        tk.Button(self.frame, text="Log In", command=self.show_login_page).pack()
+        tk.Button(self.frame, text="Sign Up", command=self.show_signup_page).pack()
 
     def show_login_page(self):
         self.clear_frame()
-
-        self.frame = tk.Frame(self.master)
-        self.frame.pack()
-
-        self.label = tk.Label(self.frame, text="Login")
-        self.label.pack()
-
-        self.username_label = tk.Label(self.frame, text="Username")
-        self.username_label.pack()
-        self.username_entry = tk.Entry(self.frame)
-        self.username_entry.pack()
-
-        self.password_label = tk.Label(self.frame, text="Password")
-        self.password_label.pack()
-        self.password_entry = tk.Entry(self.frame, show="*")
-        self.password_entry.pack()
-
-        self.image = PhotoImage(file="default.png")
-        self.image_label = tk.Label(self.frame, image=self.image)
-        self.image_label.pack()
-
-        self.login_button = tk.Button(self.frame, text="Login", command=self.login)
-        self.login_button.pack()
-
-        self.back_button = tk.Button(self.frame, text="Back", command=self.show_home_page)
-        self.back_button.pack()
-
-    def login(self):
-        username = self.username_entry.get()
-        password = self.password_entry.get()
-        # Replace with actual authentication logic
-        if username == "admin" and password == "password":
-            messagebox.showinfo("Login Successful", "Welcome to the Library Management System!")
-            self.show_home_page()
-        else:
-            messagebox.showerror("Login Failed", "Invalid username or password")
-
-    def clear_frame(self):
-        for widget in self.master.winfo_children():
-            widget.destroy()
-
-    def exit_app(self):
-        if messagebox.askokcancel("Quit", "Do you want to quit?"):
-            self.master.destroy()
-
+        LoginPage(self.master, self.show_signup_page, self.get_bags_instance, self.menubar)
 
     def show_signup_page(self):
         self.clear_frame()
-        SignupPage(self.master, self.show_home_page)
+        SignupPage(self.master, self.show_login_page, self.get_bags_instance, self.menubar)
+
+    def clear_frame(self):
+        for widget in self.master.winfo_children():
+            if isinstance(widget, tk.Menu):
+                continue
+            widget.destroy()
+
+    def exit_app(self):
+        if messagebox.askokcancel("Exit", "Are you sure you want to exit?"):
+            self.save_data_to_file()
+            self.master.quit()
+
+    def save_data_to_file(self):
+        os.makedirs('database', exist_ok=True)
+        with open(os.path.join('database', 'BookBag.dat'), 'wb') as book_file:
+            pickle.dump(self.get_bags_instance.get_book_bag(), book_file)
+        with open(os.path.join('database', 'ProfileBag.dat'), 'wb') as profile_file:
+            pickle.dump(self.get_bags_instance.get_profile_bag(), profile_file)
+        with open(os.path.join('database', 'AdminBag.dat'), 'wb') as admin_file:
+            pickle.dump(self.get_bags_instance.get_admin_bag(), admin_file)
 
 def main():
     root = tk.Tk()

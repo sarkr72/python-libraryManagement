@@ -25,4 +25,4 @@ class ProfileBag:
         return self.history_map
 
     def get_profile_map(self):
-        return self.profile_map
+       return list(self.profile_map.values())
