@@ -5,6 +5,7 @@ from book import Book
 from myProfile import Profile
 from profileBag import ProfileBag
 from bookBag import BookBag
+from datetime import datetime
 
 class Utilities:
     def __init__(self):
@@ -32,8 +33,9 @@ class Utilities:
     def make_books(self):
         title_and_isbn = self.emit_title_and_isbn(os.path.join("assets", "txtfiles", "textbook_titles.txt"), os.path.join("assets", "txtfiles", "textbook_isbns.txt"), 5000)
         book_arr = []
+        current_time = datetime.now()
         for title, isbn in title_and_isbn:
-            book_arr.append(Book(title, isbn, self.get_random_author(self.author), self.emit_price(), None, None))
+            book_arr.append(Book(title, isbn, self.get_random_author(self.author), self.emit_price(), current_time, None))
         return book_arr
 
     def emit_author(self, fname_file, lname_file):

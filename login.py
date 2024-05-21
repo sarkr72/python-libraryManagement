@@ -54,7 +54,11 @@ class LoginPage:
 
     def go_to_dashboard(self, username):
         self.clear_frame()
-        Dashboard(self.master, self.get_bags_instance, username, self.menubar)
+        Dashboard(self.master, self.get_bags_instance, username, self.menubar,  self.go_to_login)
+
+    def go_to_login(self):
+        self.clear_frame()
+        self.create_login_page()
 
     def clear_frame(self):
         for widget in self.master.winfo_children():

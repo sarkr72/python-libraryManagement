@@ -19,7 +19,7 @@ class BookBag:
     def get_history_map(self):
         return self.history_map
 
-    def get_book_map2(self):
+    def get_book_map(self):
         return self.book_map
 
     def insert(self, book):

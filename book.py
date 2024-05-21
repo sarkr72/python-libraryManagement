@@ -2,7 +2,7 @@ from datetime import time
 import pickle
 
 class Book:
-    def __init__(self, titles, isbn, author, price, borrow_time=None, return_time=None):
+    def __init__(self, titles, isbn, author, price, borrow_time, return_time):
         self.titles = titles
         self.isbn = isbn
         self.author = author
